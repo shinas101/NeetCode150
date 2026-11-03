@@ -1,0 +1,20 @@
+# LC 125
+
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        left , right  = 0 , len(s)-1
+        while right > left:
+            if not s[right].isalnum():
+                right-=1
+            elif not s[left].isalnum():
+                left+=1
+            else:
+                if s[left].lower() != s[right].lower():
+                    return False
+                right-=1
+                left+=1
+        return True
