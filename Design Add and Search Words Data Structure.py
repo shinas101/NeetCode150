@@ -26,10 +26,9 @@ class WordDictionary:
                 c = word[i]
                 if c == ".":
                     for child in curr.children.values():
-                        if dfs(j+1,child):
+                        if dfs(i+1,child):
                             return True
-                        else:
-                            return False
+                    return False
                 else:
                     if c not in curr.children:
                         return False
